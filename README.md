@@ -27,7 +27,6 @@ A modern business matchmaking platform built with React Router v7 that connects 
 - **`/buyer-questionaries3`** - Buyer onboarding: Financial capacity
 - **`/buyer-questionaries4`** - Buyer onboarding: Industry preferences
 - **`/buyer-questionaries5`** - Buyer onboarding: Final details
-- **`/discover`** - Tinder-style seller discovery interface
 - **`/buyer/:id`** - Individual buyer profile view
 
 ### 🏢 **Seller Journey**
@@ -36,6 +35,8 @@ A modern business matchmaking platform built with React Router v7 that connects 
 - **`/seller-questionaries3`** - Seller onboarding: Business operations
 - **`/seller-questionaries4`** - Seller onboarding: Sale preferences
 - **`/seller-questionaries5`** - Seller onboarding: Final information
+- **`/discover`** - Tinder-style buyer discovery interface
+
 
 ### 🤝 **Matching & Deals**
 - **`/match-success`** - Match confirmation page with celebration
