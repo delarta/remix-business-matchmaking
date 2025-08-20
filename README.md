@@ -1,24 +1,106 @@
-# Welcome to React Router!
+# Business Matchmaking Platform
 
-A modern, production-ready template for building full-stack React applications using React Router.
+A modern business matchmaking platform built with React Router v7 that connects buyers and sellers for business acquisitions. The platform features a Tinder-like discovery interface, comprehensive questionnaires, deal management dashboard, and real-time communication tools.
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/remix-run/react-router-templates/tree/main/default)
+## 🚀 Features
 
-## Features
+- **Smart Matching Algorithm**: Connects buyers and sellers based on compatibility
+- **Tinder-Style Discovery**: Swipe interface for browsing potential matches
+- **Comprehensive Questionnaires**: Detailed onboarding for both buyers and sellers
+- **Deal Management Dashboard**: Track deal progress with milestones and communications
+- **Real-time Chat System**: Organized conversations by deal topics
+- **Mobile-First Design**: Responsive interface optimized for all devices
+- **TypeScript Support**: Full type safety throughout the application
+- **Modern UI Components**: Built with Tailwind CSS and Radix UI
 
-- 🚀 Server-side rendering
-- ⚡️ Hot Module Replacement (HMR)
-- 📦 Asset bundling and optimization
-- 🔄 Data loading and mutations
-- 🔒 TypeScript by default
-- 🎉 TailwindCSS for styling
-- 📖 [React Router docs](https://reactrouter.com/)
+## �️ Application Routes
 
-## Getting Started
+### 🏠 **Home & Authentication**
+- **`/`** - Landing page with welcome interface
+- **`/login`** - User authentication page
+- **`/signup`** - General user registration
+- **`/signup-seller`** - Seller-specific registration
+
+### 👤 **Buyer Journey**
+- **`/buyer-questionaries1`** - Buyer onboarding: Basic information
+- **`/buyer-questionaries2`** - Buyer onboarding: Acquisition criteria
+- **`/buyer-questionaries3`** - Buyer onboarding: Financial capacity
+- **`/buyer-questionaries4`** - Buyer onboarding: Industry preferences
+- **`/buyer-questionaries5`** - Buyer onboarding: Final details
+- **`/discover`** - Tinder-style seller discovery interface
+- **`/buyer/:id`** - Individual buyer profile view
+
+### 🏢 **Seller Journey**
+- **`/seller-questionaries1`** - Seller onboarding: Business basics
+- **`/seller-questionaries2`** - Seller onboarding: Financial details
+- **`/seller-questionaries3`** - Seller onboarding: Business operations
+- **`/seller-questionaries4`** - Seller onboarding: Sale preferences
+- **`/seller-questionaries5`** - Seller onboarding: Final information
+
+### 🤝 **Matching & Deals**
+- **`/match-success`** - Match confirmation page with celebration
+  - Query params: `?buyerId=123&sellerId=456`
+- **`/dashboard`** - Deal management dashboard
+  - Query params: `?matchId=123-456` or `?dealId=789`
+
+## 📱 Key Components
+
+### **Discovery Interface**
+- Swipeable cards with buyer/seller profiles
+- Like/pass functionality with smooth animations
+- Profile images and key information display
+- Bookmark feature for saving interesting profiles
+
+### **Match Success**
+- Animated celebration page
+- Profile cards of matched parties
+- Navigation to deal dashboard
+- Option to discover more matches
+
+### **Deal Dashboard**
+- **Overview Tab**: Progress tracking, next steps, deal summary
+- **Milestones Tab**: Visual progress through deal stages
+- **Chats Tab**: Organized conversations by topic
+- **Docs Tab**: Document management (coming soon)
+
+### **Questionnaire System**
+- Multi-step onboarding process
+- Progress indicators
+- Form validation
+- Role-specific questions for buyers vs sellers
+
+## 🎨 Design System
+
+### **Color Palette**
+- Primary: Red accent color for CTAs and progress
+- Background: Gray-based neutral palette
+- Cards: Clean white backgrounds with subtle shadows
+- Text: High contrast for accessibility
+
+### **Typography**
+- Inter font family for modern readability
+- Consistent heading hierarchy
+- Proper spacing and line heights
+
+### **Components**
+- Reusable UI components with Radix UI
+- Consistent button styles and interactions
+- Form elements with proper validation states
+- Navigation components with active states
+
+## 🔧 Technical Stack
+
+- **Framework**: React Router v7
+- **Language**: TypeScript
+- **Styling**: Tailwind CSS
+- **UI Components**: Radix UI
+- **Icons**: Lucide React
+- **Build Tool**: Vite
+- **Package Manager**: npm
+
+## 🚀 Getting Started
 
 ### Installation
-
-Install the dependencies:
 
 ```bash
 npm install
@@ -26,62 +108,73 @@ npm install
 
 ### Development
 
-Start the development server with HMR:
-
 ```bash
 npm run dev
 ```
 
 Your application will be available at `http://localhost:5173`.
 
-## Building for Production
-
-Create a production build:
+### Building for Production
 
 ```bash
 npm run build
 ```
 
-## Deployment
-
-### Docker Deployment
-
-To build and run using Docker:
+### Type Checking
 
 ```bash
-docker build -t my-app .
-
-# Run the container
-docker run -p 3000:3000 my-app
+npm run typecheck
 ```
 
-The containerized application can be deployed to any platform that supports Docker, including:
-
-- AWS ECS
-- Google Cloud Run
-- Azure Container Apps
-- Digital Ocean App Platform
-- Fly.io
-- Railway
-
-### DIY Deployment
-
-If you're familiar with deploying Node applications, the built-in app server is production-ready.
-
-Make sure to deploy the output of `npm run build`
+## 📁 Project Structure
 
 ```
-├── package.json
-├── package-lock.json (or pnpm-lock.yaml, or bun.lockb)
-├── build/
-│   ├── client/    # Static assets
-│   └── server/    # Server-side code
+app/
+├── components/           # Reusable UI components
+│   ├── ui/              # Base UI components (buttons, forms, etc.)
+│   ├── buyer-profile.tsx
+│   ├── discover-buyer.tsx
+│   ├── deal-dashboard.tsx
+│   └── match-success.tsx
+├── routes/              # Application routes
+│   ├── home.tsx
+│   ├── login.tsx
+│   ├── buyer-*.tsx     # Buyer journey routes
+│   ├── seller-*.tsx    # Seller journey routes
+│   ├── dashboard.tsx
+│   └── match-success.tsx
+├── assets/             # Static assets (images, etc.)
+├── lib/                # Utility functions
+└── welcome/            # Welcome page assets
 ```
 
-## Styling
+## 🎯 User Flow
 
-This template comes with [Tailwind CSS](https://tailwindcss.com/) already configured for a simple default starting experience. You can use whatever CSS framework you prefer.
+### **For Buyers:**
+1. Sign up and complete 5-step questionnaire
+2. Access discovery interface to browse sellers
+3. Swipe through seller profiles
+4. Get matched with compatible sellers
+5. Manage deals through dashboard
+6. Communicate via organized chat system
+
+### **For Sellers:**
+1. Sign up and complete 5-step questionnaire
+2. Wait for buyer interest
+3. Get notified of matches
+4. Manage deals through dashboard
+5. Communicate with potential buyers
+
+## 🔮 Future Enhancements
+
+- Real-time notifications
+- Advanced filtering and search
+- Document upload and management
+- Video call integration
+- Payment processing
+- Analytics and reporting
+- Mobile app development
 
 ---
 
-Built with ❤️ using React Router.
+Built with ❤️ using React Router v7, TypeScript, and Tailwind CSS.
