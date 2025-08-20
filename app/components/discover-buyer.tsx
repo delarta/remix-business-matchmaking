@@ -171,12 +171,12 @@ function SwipeableCard({ buyer, onSwipe, isTop }: SwipeableCardProps) {
     >
       <div className="absolute top-4 right-4 z-20">
         <div className="bg-white/90 backdrop-blur-sm rounded-full p-2 shadow-lg">
-          <Bookmark className="w-5 h-5 text-gray-700" />
+          <Bookmark className="w-5 h-5 text-neutral-700" />
         </div>
       </div>
 
-      <div className="h-2/3 bg-gradient-to-br from-gray-200 to-gray-300 relative">
-        <div className="absolute inset-0 bg-gray-400 flex items-center justify-center">
+      <div className="h-2/3 bg-gradient-to-br from-neutral-200 to-neutral-300 relative">
+        <div className="absolute inset-0 bg-neutral-400 flex items-center justify-center">
           <img
             src={buyer.image}
             alt={buyer.name}
@@ -194,15 +194,15 @@ function SwipeableCard({ buyer, onSwipe, isTop }: SwipeableCardProps) {
       >
         <div>
           <div className="flex items-center gap-2 mb-2">
-            <h2 className="text-2xl font-bold text-gray-900">{buyer.name}</h2>
+            <h2 className="text-2xl font-bold text-neutral-900">{buyer.name}</h2>
             {buyer.verified && (
               <div className="w-6 h-6 bg-blue-500 rounded-full flex items-center justify-center">
                 <div className="w-3 h-3 bg-white rounded-full"></div>
               </div>
             )}
           </div>
-          <p className="text-gray-600 mb-1">{buyer.location}</p>
-          <p className="text-2xl font-bold text-gray-900 mb-3">
+          <p className="text-neutral-600 mb-1">{buyer.location}</p>
+          <p className="text-2xl font-bold text-neutral-900 mb-3">
             {buyer.budget}
           </p>
 
@@ -247,8 +247,8 @@ export function DiscoverBuyer() {
   };
 
   return (
-    <div className="min-h-screen bg-gray-100 text-white flex flex-col relative">
-      <div className="absolute inset-0 h-1/3 bg-gradient-to-b from-gray-900 to-gray-800"></div>
+    <div className="min-h-screen bg-neutral-100 text-white flex flex-col relative">
+      <div className="absolute inset-0 h-1/3 bg-gradient-to-b from-neutral-900 to-neutral-800"></div>
       {/* Header */}
       <div className="pt-12 pb-6 z-10">
         <Container size="full">
@@ -269,7 +269,7 @@ export function DiscoverBuyer() {
 
         {currentIndex >= buyers.length && (
           <div className="absolute inset-4 top-4 bottom-24 bg-white rounded-2xl shadow-xl flex items-center justify-center">
-            <div className="text-center text-gray-500">
+            <div className="text-center text-neutral-500">
               <p className="text-xl font-semibold mb-2">No more buyers</p>
               <p>Check back later for new matches!</p>
             </div>
@@ -283,7 +283,7 @@ export function DiscoverBuyer() {
           <Button
             size="lg"
             variant="outline"
-            className="w-16 h-16 rounded-full bg-white border-2 border-gray-300 hover:bg-gray-50"
+            className="w-16 h-16 rounded-full bg-white border-2 border-neutral-300 hover:bg-neutral-50"
             onClick={() => handleButtonAction("pass")}
           >
             <X className="w-8 h-8 text-red-500" />

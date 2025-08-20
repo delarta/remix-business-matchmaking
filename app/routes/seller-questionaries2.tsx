@@ -9,7 +9,7 @@ import { RadioGroup, RadioGroupItem } from "~/components/ui/radio-group";
 function BuyerQuestionaries2() {
   const navigate = useNavigate();
   return (
-    <div className="bg-gray-100">
+    <div className="bg-neutral-100">
       <Container>
         <div className="min-h-screen flex flex-col">
           <div className="flex flex-col gap-6 pt-12">
@@ -25,7 +25,7 @@ function BuyerQuestionaries2() {
             </div>
             <div className="relative overflow-hidden">
               <RadioGroup defaultValue="small">
-                <div className="flex items-center gap-3 p-3 border rounded-lg border-gray-400 bg-white h-12">
+                <div className="flex items-center gap-3 p-3 border rounded-lg border-neutral-400 bg-white h-12">
                   <RadioGroupItem value="small" id="r1" />
                   <Label htmlFor="r1" className="w-full">
                     <div className="flex flex-col gap-2">
@@ -33,7 +33,7 @@ function BuyerQuestionaries2() {
                     </div>
                   </Label>
                 </div>
-                <div className="flex items-center gap-3 p-3 border rounded-lg border-gray-400 bg-white h-12">
+                <div className="flex items-center gap-3 p-3 border rounded-lg border-neutral-400 bg-white h-12">
                   <RadioGroupItem value="medium" id="r2" />
                   <Label htmlFor="r2" className="w-full">
                     <div className="flex flex-col gap-2">
@@ -41,7 +41,7 @@ function BuyerQuestionaries2() {
                     </div>
                   </Label>
                 </div>
-                <div className="flex items-center gap-3 p-3 border rounded-lg border-gray-400 bg-white h-12">
+                <div className="flex items-center gap-3 p-3 border rounded-lg border-neutral-400 bg-white h-12">
                   <RadioGroupItem value="large" id="r3" />
                   <Label htmlFor="r3" className="w-full">
                     <div className="flex flex-col gap-2">
@@ -49,7 +49,7 @@ function BuyerQuestionaries2() {
                     </div>
                   </Label>
                 </div>
-                <div className="flex items-center gap-3 p-3 border rounded-lg border-gray-400 bg-white h-12">
+                <div className="flex items-center gap-3 p-3 border rounded-lg border-neutral-400 bg-white h-12">
                   <RadioGroupItem value="xl" id="r4" />
                   <Label htmlFor="r4" className="w-full">
                     <div className="flex flex-col gap-2">
@@ -60,7 +60,7 @@ function BuyerQuestionaries2() {
               </RadioGroup>
             </div>
           </div>
-          <div className="relative overflow-hidden mt-6 text-center font-light text-gray-400">
+          <div className="relative overflow-hidden mt-6 text-center font-light text-neutral-400">
             <p>An estimate is fine, this helps attract the right buyers.</p>
           </div>
           <div className="flex gap-4 mt-auto mb-8 relative">

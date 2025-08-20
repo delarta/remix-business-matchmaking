@@ -77,7 +77,7 @@ export function BottomNavigation({
   };
 
   return (
-    <div className={cn("border-t border-gray-200 bg-white", className)}>
+    <div className={cn("border-t border-neutral-200 bg-white", className)}>
       <div className="flex justify-around py-3">
         {navigationItems.map((item) => {
           const Icon = item.icon;
@@ -90,7 +90,7 @@ export function BottomNavigation({
               asChild
               className={cn(
                 "flex flex-col items-center gap-1 h-auto py-2 px-3",
-                isActive ? "text-red-500" : "text-gray-400 hover:text-gray-600"
+                isActive ? "text-red-500" : "text-neutral-400 hover:text-neutral-600"
               )}
             >
               <Link to={item.href}>
@@ -118,7 +118,7 @@ export function BottomNavigationWithHandlers({
   onTabChange,
 }: BottomNavigationWithHandlersProps) {
   return (
-    <div className={cn("border-t border-gray-200 bg-white", className)}>
+    <div className={cn("border-t border-neutral-200 bg-white", className)}>
       <div className="flex justify-around py-3">
         {navigationItems.map((item) => {
           const Icon = item.icon;
@@ -131,7 +131,7 @@ export function BottomNavigationWithHandlers({
               onClick={() => onTabChange?.(item.id)}
               className={cn(
                 "flex flex-col items-center gap-1 h-auto py-2 px-3",
-                isActive ? "text-red-500" : "text-gray-400 hover:text-gray-600"
+                isActive ? "text-red-500" : "text-neutral-400 hover:text-neutral-600"
               )}
             >
               <Icon className="w-5 h-5" />

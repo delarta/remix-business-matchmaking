@@ -9,7 +9,7 @@ import { useNavigate } from "react-router";
 function BuyerQuestionaries2() {
   const navigate = useNavigate();
   return (
-    <div className="bg-gray-100">
+    <div className="bg-neutral-100">
       <Container>
         <div className="min-h-screen flex flex-col">
           <div className="flex flex-col gap-6 pt-12">
@@ -25,7 +25,7 @@ function BuyerQuestionaries2() {
             </div>
             <div className="relative overflow-hidden">
               <RadioGroup defaultValue="small">
-                <div className="flex items-center gap-3 p-3 border rounded-lg border-gray-400 bg-white h-12">
+                <div className="flex items-center gap-3 p-3 border rounded-lg border-neutral-400 bg-white h-12">
                   <RadioGroupItem value="small" id="r1" />
                   <Label htmlFor="r1" className="w-full">
                     <div className="flex flex-col gap-2">
@@ -33,7 +33,7 @@ function BuyerQuestionaries2() {
                     </div>
                   </Label>
                 </div>
-                <div className="flex items-center gap-3 p-3 border rounded-lg border-gray-400 bg-white h-12">
+                <div className="flex items-center gap-3 p-3 border rounded-lg border-neutral-400 bg-white h-12">
                   <RadioGroupItem value="medium" id="r2" />
                   <Label htmlFor="r2" className="w-full">
                     <div className="flex flex-col gap-2">
@@ -41,7 +41,7 @@ function BuyerQuestionaries2() {
                     </div>
                   </Label>
                 </div>
-                <div className="flex items-center gap-3 p-3 border rounded-lg border-gray-400 bg-white h-12">
+                <div className="flex items-center gap-3 p-3 border rounded-lg border-neutral-400 bg-white h-12">
                   <RadioGroupItem value="large" id="r3" />
                   <Label htmlFor="r3" className="w-full">
                     <div className="flex flex-col gap-2">
@@ -52,7 +52,7 @@ function BuyerQuestionaries2() {
               </RadioGroup>
             </div>
           </div>
-          <div className="relative overflow-hidden mt-6 text-center font-light text-gray-400">
+          <div className="relative overflow-hidden mt-6 text-center font-light text-neutral-400">
             <p>
               Whether you’re ready now or just testing the waters, we’ve got you
               covered.

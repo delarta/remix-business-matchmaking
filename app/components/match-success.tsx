@@ -55,7 +55,7 @@ function ProfileCard({ user, isLeft }: { user: MatchUser; isLeft: boolean }) {
         ${isLeft ? "rotate-[-8deg]" : "rotate-[8deg]"}
       `}
     >
-      <div className="h-36 bg-gradient-to-br from-gray-200 to-gray-300 relative overflow-hidden">
+      <div className="h-36 bg-gradient-to-br from-neutral-200 to-neutral-300 relative overflow-hidden">
         {user.image ? (
           <img
             src={user.image}
@@ -63,15 +63,15 @@ function ProfileCard({ user, isLeft }: { user: MatchUser; isLeft: boolean }) {
             className="w-full h-full object-cover"
           />
         ) : (
-          <div className="w-full h-full flex items-center justify-center bg-gray-300">
-            <User className="w-12 h-12 text-gray-500" />
+          <div className="w-full h-full flex items-center justify-center bg-neutral-300">
+            <User className="w-12 h-12 text-neutral-500" />
           </div>
         )}
       </div>
 
       {/* Name */}
       <div className="p-3 text-center">
-        <h3 className="font-bold text-lg text-gray-900 truncate">
+        <h3 className="font-bold text-lg text-neutral-900 truncate">
           {user.name}
           {user.role === "seller" && " (You)"}
         </h3>
@@ -106,7 +106,7 @@ export function MatchSuccess({
   }, []);
 
   return (
-    <div className="min-h-screen bg-gray-900 text-white flex flex-col">
+    <div className="min-h-screen bg-neutral-900 text-white flex flex-col">
       {/* Status Bar Spacer */}
       <div className="pt-12" />
 
@@ -143,7 +143,7 @@ export function MatchSuccess({
             ${showDescription ? "translate-y-0 opacity-100" : "translate-y-4 opacity-0"}
           `}
         >
-          <p className="text-lg text-gray-300 leading-relaxed max-w-sm">
+          <p className="text-lg text-neutral-300 leading-relaxed max-w-sm">
             Now you can start a chat to discuss the deal even further!
           </p>
         </div>
@@ -164,7 +164,7 @@ export function MatchSuccess({
           <Button
             onClick={onDiscoverMore}
             variant="outline"
-            className="flex-1 text-gray-700 font-medium h-12 rounded-lg w-full"
+            className="flex-1 text-neutral-700 font-medium h-12 rounded-lg w-full"
           >
             Discover More
           </Button>

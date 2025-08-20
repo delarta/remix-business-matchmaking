@@ -67,7 +67,7 @@ function TabNavigation({ activeTab, onTabChange }: {
   ]
 
   return (
-    <div className="flex bg-gray-100 rounded-lg p-1 mb-6">
+    <div className="flex bg-neutral-100 rounded-lg p-1 mb-6">
       {tabs.map((tab) => (
         <button
           key={tab.id}
@@ -75,8 +75,8 @@ function TabNavigation({ activeTab, onTabChange }: {
           className={`
             flex-1 py-2 px-4 rounded-md text-sm font-medium transition-colors
             ${activeTab === tab.id 
-              ? 'bg-white text-gray-900 shadow-sm' 
-              : 'text-gray-600 hover:text-gray-900'
+              ? 'bg-white text-neutral-900 shadow-sm' 
+              : 'text-neutral-600 hover:text-neutral-900'
             }
           `}
         >
@@ -90,7 +90,7 @@ function TabNavigation({ activeTab, onTabChange }: {
 // Progress bar component
 function ProgressBar({ progress }: { progress: number }) {
   return (
-    <div className="w-full bg-gray-200 rounded-full h-2">
+    <div className="w-full bg-neutral-200 rounded-full h-2">
       <div 
         className="bg-red-500 h-2 rounded-full transition-all duration-300"
         style={{ width: `${progress}%` }}
@@ -102,17 +102,17 @@ function ProgressBar({ progress }: { progress: number }) {
 // Next step card component
 function NextStepCard({ step }: { step: DealData['nextStep'] }) {
   return (
-    <div className="bg-white rounded-xl p-4 shadow-sm border border-gray-100 flex items-center justify-between">
+    <div className="bg-white rounded-xl p-4 shadow-sm border border-neutral-100 flex items-center justify-between">
       <div className="flex items-center gap-3">
         <div className="w-10 h-10 bg-yellow-100 rounded-lg flex items-center justify-center">
           <Clock className="w-5 h-5 text-yellow-600" />
         </div>
         <div>
-          <h3 className="font-semibold text-gray-900">{step.title}</h3>
+          <h3 className="font-semibold text-neutral-900">{step.title}</h3>
           <p className="text-sm text-orange-500">{step.status}</p>
         </div>
       </div>
-      <ChevronRight className="w-5 h-5 text-gray-400" />
+      <ChevronRight className="w-5 h-5 text-neutral-400" />
     </div>
   )
 }
@@ -120,26 +120,26 @@ function NextStepCard({ step }: { step: DealData['nextStep'] }) {
 // Deal overview card component
 function DealOverviewCard({ deal }: { deal: DealData }) {
   return (
-    <div className="bg-white rounded-xl p-4 shadow-sm border border-gray-100 space-y-4">
+    <div className="bg-white rounded-xl p-4 shadow-sm border border-neutral-100 space-y-4">
       <div className="grid grid-cols-2 gap-4">
         <div>
-          <p className="text-sm text-gray-600 mb-1">Deal Name:</p>
-          <p className="font-semibold text-gray-900">{deal.name}</p>
+          <p className="text-sm text-neutral-600 mb-1">Deal Name:</p>
+          <p className="font-semibold text-neutral-900">{deal.name}</p>
         </div>
         <div>
-          <p className="text-sm text-gray-600 mb-1">Business Description:</p>
-          <p className="font-semibold text-gray-900">{deal.businessDescription}</p>
+          <p className="text-sm text-neutral-600 mb-1">Business Description:</p>
+          <p className="font-semibold text-neutral-900">{deal.businessDescription}</p>
         </div>
       </div>
       
       <div className="grid grid-cols-2 gap-4">
         <div>
-          <p className="text-sm text-gray-600 mb-1">Valuation Range:</p>
-          <p className="font-semibold text-gray-900">{deal.valuationRange}</p>
+          <p className="text-sm text-neutral-600 mb-1">Valuation Range:</p>
+          <p className="font-semibold text-neutral-900">{deal.valuationRange}</p>
         </div>
         <div>
-          <p className="text-sm text-gray-600 mb-1">Deal Stage:</p>
-          <p className="font-semibold text-gray-900">{deal.stage}</p>
+          <p className="text-sm text-neutral-600 mb-1">Deal Stage:</p>
+          <p className="font-semibold text-neutral-900">{deal.stage}</p>
         </div>
       </div>
     </div>
@@ -149,8 +149,8 @@ function DealOverviewCard({ deal }: { deal: DealData }) {
 // Contact card component
 function ContactCard({ contact }: { contact: Contact }) {
   return (
-    <div className="flex items-center gap-3 p-3 bg-white rounded-lg border border-gray-100">
-      <div className="w-12 h-12 rounded-full overflow-hidden bg-gray-200 flex items-center justify-center">
+    <div className="flex items-center gap-3 p-3 bg-white rounded-lg border border-neutral-100">
+      <div className="w-12 h-12 rounded-full overflow-hidden bg-neutral-200 flex items-center justify-center">
         {contact.image ? (
           <img
             src={contact.image}
@@ -158,12 +158,12 @@ function ContactCard({ contact }: { contact: Contact }) {
             className="w-full h-full object-cover"
           />
         ) : (
-          <User className="w-6 h-6 text-gray-500" />
+          <User className="w-6 h-6 text-neutral-500" />
         )}
       </div>
       <div>
-        <h3 className="font-semibold text-gray-900">{contact.name}</h3>
-        <p className="text-sm text-gray-600 capitalize">{contact.role}</p>
+        <h3 className="font-semibold text-neutral-900">{contact.name}</h3>
+        <p className="text-sm text-neutral-600 capitalize">{contact.role}</p>
       </div>
     </div>
   )
@@ -190,8 +190,8 @@ function MilestoneItem({ milestone, showChevron = false }: {
         )
       case "pending":
         return (
-          <div className="w-10 h-10 bg-gray-100 rounded-lg flex items-center justify-center">
-            <Circle className="w-5 h-5 text-gray-400" />
+          <div className="w-10 h-10 bg-neutral-100 rounded-lg flex items-center justify-center">
+            <Circle className="w-5 h-5 text-neutral-400" />
           </div>
         )
     }
@@ -215,21 +215,21 @@ function MilestoneItem({ milestone, showChevron = false }: {
       case "in-progress":
         return "text-orange-500"
       case "pending":
-        return "text-gray-500"
+        return "text-neutral-500"
     }
   }
 
   return (
-    <div className="flex items-center justify-between p-4 bg-white border-b border-gray-100 last:border-b-0">
+    <div className="flex items-center justify-between p-4 bg-white border-b border-neutral-100 last:border-b-0">
       <div className="flex items-center gap-3">
         {getStatusIcon()}
         <div>
-          <h3 className="font-semibold text-gray-900">{milestone.title}</h3>
+          <h3 className="font-semibold text-neutral-900">{milestone.title}</h3>
           <p className={`text-sm ${getStatusColor()}`}>{getStatusText()}</p>
         </div>
       </div>
       {showChevron && milestone.status === "in-progress" && (
-        <ChevronRight className="w-5 h-5 text-gray-400" />
+        <ChevronRight className="w-5 h-5 text-neutral-400" />
       )}
     </div>
   )
@@ -241,8 +241,8 @@ function MilestonesTab({ milestones }: { milestones: Milestone[] }) {
 
   return (
     <div>
-      <h2 className="text-lg font-semibold text-gray-900 mb-4">Milestones</h2>
-      <div className="bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden">
+      <h2 className="text-lg font-semibold text-neutral-900 mb-4">Milestones</h2>
+      <div className="bg-white rounded-xl shadow-sm border border-neutral-100 overflow-hidden">
         {sortedMilestones.map((milestone) => (
           <MilestoneItem
             key={milestone.id}
@@ -284,10 +284,10 @@ function ChatThreadItem({ thread, onClick }: {
 
   return (
     <div
-      className="flex items-center gap-3 p-4 bg-white border-b border-gray-100 last:border-b-0 hover:bg-gray-50 cursor-pointer transition-colors"
+      className="flex items-center gap-3 p-4 bg-white border-b border-neutral-100 last:border-b-0 hover:bg-neutral-50 cursor-pointer transition-colors"
       onClick={onClick}
     >
-      <div className="w-12 h-12 rounded-full overflow-hidden bg-gray-200 flex items-center justify-center flex-shrink-0">
+      <div className="w-12 h-12 rounded-full overflow-hidden bg-neutral-200 flex items-center justify-center flex-shrink-0">
         {thread.participant.image ? (
           <img
             src={thread.participant.image}
@@ -295,18 +295,18 @@ function ChatThreadItem({ thread, onClick }: {
             className="w-full h-full object-cover"
           />
         ) : (
-          <User className="w-6 h-6 text-gray-500" />
+          <User className="w-6 h-6 text-neutral-500" />
         )}
       </div>
 
       <div className="flex-1 min-w-0">
         <div className="flex items-center justify-between mb-1">
-          <h3 className="font-semibold text-gray-900 truncate">{thread.title}</h3>
-          <span className="text-xs text-gray-500 flex-shrink-0 ml-2">
+          <h3 className="font-semibold text-neutral-900 truncate">{thread.title}</h3>
+          <span className="text-xs text-neutral-500 flex-shrink-0 ml-2">
             {formatTimestamp(thread.timestamp)}
           </span>
         </div>
-        <p className="text-sm text-gray-600 truncate">{thread.category}</p>
+        <p className="text-sm text-neutral-600 truncate">{thread.category}</p>
       </div>
 
       {thread.unreadCount && thread.unreadCount > 0 && (
@@ -332,8 +332,8 @@ function ChatsTab({ chatThreads, onChatClick }: {
 
   return (
     <div>
-      <h2 className="text-lg font-semibold text-gray-900 mb-4">Chats</h2>
-      <div className="bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden">
+      <h2 className="text-lg font-semibold text-neutral-900 mb-4">Chats</h2>
+      <div className="bg-white rounded-xl shadow-sm border border-neutral-100 overflow-hidden">
         {sortedThreads.map((thread) => (
           <ChatThreadItem
             key={thread.id}
@@ -356,17 +356,17 @@ export function DealDashboard({ deal, onBack, onChatClick }: DealDashboardProps)
   }
 
   return (
-    <div className="min-h-screen bg-gray-50 flex flex-col">
+    <div className="min-h-screen bg-neutral-50 flex flex-col">
       {/* Header */}
-      <div className="bg-white border-b border-gray-200 px-4 py-3">
+      <div className="bg-white border-b border-neutral-200 px-4 py-3">
         <div className="flex items-center gap-3">
           <button 
             onClick={onBack}
-            className="p-2 hover:bg-gray-100 rounded-lg transition-colors"
+            className="p-2 hover:bg-neutral-100 rounded-lg transition-colors"
           >
-            <ArrowLeft className="w-5 h-5 text-gray-600" />
+            <ArrowLeft className="w-5 h-5 text-neutral-600" />
           </button>
-          <h1 className="text-lg font-semibold text-gray-900">Deal Dashboard</h1>
+          <h1 className="text-lg font-semibold text-neutral-900">Deal Dashboard</h1>
         </div>
       </div>
 
@@ -379,9 +379,9 @@ export function DealDashboard({ deal, onBack, onChatClick }: DealDashboardProps)
         {activeTab === "overview" && (
           <>
             {/* Overall Progress */}
-            <div className="bg-white rounded-xl p-4 shadow-sm border border-gray-100">
+            <div className="bg-white rounded-xl p-4 shadow-sm border border-neutral-100">
               <div className="flex items-center justify-between mb-3">
-                <h2 className="text-lg font-semibold text-gray-900">Overall deal progress</h2>
+                <h2 className="text-lg font-semibold text-neutral-900">Overall deal progress</h2>
                 <span className="text-lg font-bold text-red-500">{deal.progress}%</span>
               </div>
               <ProgressBar progress={deal.progress} />
@@ -389,19 +389,19 @@ export function DealDashboard({ deal, onBack, onChatClick }: DealDashboardProps)
 
             {/* Next Required Steps */}
             <div>
-              <h2 className="text-lg font-semibold text-gray-900 mb-3">Next Required Steps</h2>
+              <h2 className="text-lg font-semibold text-neutral-900 mb-3">Next Required Steps</h2>
               <NextStepCard step={deal.nextStep} />
             </div>
 
             {/* Deal Overview */}
             <div>
-              <h2 className="text-lg font-semibold text-gray-900 mb-3">Deal Overview</h2>
+              <h2 className="text-lg font-semibold text-neutral-900 mb-3">Deal Overview</h2>
               <DealOverviewCard deal={deal} />
             </div>
 
             {/* Key Contacts */}
             <div>
-              <h2 className="text-lg font-semibold text-gray-900 mb-3">Key Contacts</h2>
+              <h2 className="text-lg font-semibold text-neutral-900 mb-3">Key Contacts</h2>
               <div className="space-y-3">
                 {deal.contacts.map((contact) => (
                   <ContactCard key={contact.id} contact={contact} />
@@ -426,11 +426,11 @@ export function DealDashboard({ deal, onBack, onChatClick }: DealDashboardProps)
 
         {/* Other tabs content (placeholder) */}
         {activeTab !== "overview" && activeTab !== "milestones" && activeTab !== "chats" && (
-          <div className="bg-white rounded-xl p-8 shadow-sm border border-gray-100 text-center">
-            <h3 className="text-lg font-semibold text-gray-900 mb-2">
+          <div className="bg-white rounded-xl p-8 shadow-sm border border-neutral-100 text-center">
+            <h3 className="text-lg font-semibold text-neutral-900 mb-2">
               {activeTab.charAt(0).toUpperCase() + activeTab.slice(1)}
             </h3>
-            <p className="text-gray-600">Content for {activeTab} tab coming soon...</p>
+            <p className="text-neutral-600">Content for {activeTab} tab coming soon...</p>
           </div>
         )}
       </div>

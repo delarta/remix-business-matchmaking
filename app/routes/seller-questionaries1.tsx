@@ -8,7 +8,7 @@ import { useNavigate } from "react-router";
 function SellerQuestionaries1() {
   const navigate = useNavigate();
   return (
-    <div className="bg-gray-100">
+    <div className="bg-neutral-100">
       <Container>
         <div className="min-h-screen flex flex-col">
           <div className="flex flex-col gap-6 pt-12">
@@ -28,34 +28,34 @@ function SellerQuestionaries1() {
             </div>
             <div className="relative overflow-hidden">
               <RadioGroup defaultValue="small">
-                <div className="flex items-center gap-3 p-3 border rounded-lg border-gray-400 bg-white">
+                <div className="flex items-center gap-3 p-3 border rounded-lg border-neutral-400 bg-white">
                   <RadioGroupItem value="small" id="r1" />
                   <Label htmlFor="r1" className="w-full">
                     <div className="flex flex-col gap-2">
                       <p className="font-medium">Small</p>
-                      <p className="text-sm text-gray-400 font-light">
+                      <p className="text-sm text-neutral-400 font-light">
                         1-50 employees
                       </p>
                     </div>
                   </Label>
                 </div>
-                <div className="flex items-center gap-3 p-3 border rounded-lg border-gray-400 bg-white">
+                <div className="flex items-center gap-3 p-3 border rounded-lg border-neutral-400 bg-white">
                   <RadioGroupItem value="medium" id="r2" />
                   <Label htmlFor="r2" className="w-full">
                     <div className="flex flex-col gap-2">
                       <p className="font-medium">Medium</p>
-                      <p className="text-sm text-gray-400 font-light">
+                      <p className="text-sm text-neutral-400 font-light">
                         51-500 employees
                       </p>
                     </div>
                   </Label>
                 </div>
-                <div className="flex items-center gap-3 p-3 border rounded-lg border-gray-400 bg-white">
+                <div className="flex items-center gap-3 p-3 border rounded-lg border-neutral-400 bg-white">
                   <RadioGroupItem value="large" id="r3" />
                   <Label htmlFor="r3" className="w-full">
                     <div className="flex flex-col gap-2">
                       <p className="font-medium">Large</p>
-                      <p className="text-sm text-gray-400 font-light">
+                      <p className="text-sm text-neutral-400 font-light">
                         500+ employees
                       </p>
                     </div>
@@ -64,7 +64,7 @@ function SellerQuestionaries1() {
               </RadioGroup>
             </div>
           </div>
-          <div className="relative overflow-hidden mt-6 text-center font-light text-gray-400">
+          <div className="relative overflow-hidden mt-6 text-center font-light text-neutral-400">
             <p>This helps buyers gauge your company’s scale at a glance.</p>
           </div>
           <div className="flex gap-4 mt-auto mb-8 relative">
