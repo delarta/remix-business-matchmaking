@@ -1,6 +1,6 @@
 import { BuyerProfile } from "~/components/buyer-profile";
 import type { Route } from "./+types/buyer.$id";
-import { useLoaderData, useNavigate } from "react-router";
+import { useNavigate, useParams } from "react-router";
 import User1Image from "~/assets/Dan.jpg";
 import User2Image from "~/assets/Maria.jpg";
 import User3Image from "~/assets/Mio.jpg";
@@ -81,27 +81,30 @@ const mockBuyerData = {
   },
 };
 
-export async function loader({ params }: Route.LoaderArgs) {
-  const { id } = params;
-
-  if (!id) {
-    throw new Response("Buyer ID is required", { status: 400 });
-  }
-
-  console.log(mockBuyerData[id as keyof typeof mockBuyerData], "BRO")
+export default function BuyerDetailPage() {
+  const navigate = useNavigate();
+  const { id } = useParams();
 
   const buyer = mockBuyerData[id as keyof typeof mockBuyerData];
 
   if (!buyer) {
-    throw new Response("Buyer not found", { status: 404 });
+    return (
+      <div className="min-h-screen bg-neutral-50 flex items-center justify-center p-6">
+        <div className="text-center">
+          <h1 className="text-2xl font-bold text-neutral-900 mb-4">Oops!</h1>
+          <p className="text-neutral-600 mb-6">
+            The buyer you're looking for doesn't exist.
+          </p>
+          <button
+            onClick={() => navigate(-1)}
+            className="px-6 py-2 bg-red-500 text-white rounded-lg hover:bg-red-600 transition-colors"
+          >
+            Go Back
+          </button>
+        </div>
+      </div>
+    );
   }
-
-  return { buyer };
-}
-
-export default function BuyerDetailPage() {
-  const { buyer } = useLoaderData<typeof loader>();
-  const navigate = useNavigate();
 
   const handleBack = () => {
     navigate(-1);

@@ -1,4 +1,4 @@
-import { useNavigate } from "react-router";
+import { useNavigate, useSearchParams } from "react-router";
 import { DealDashboard } from "~/components/deal-dashboard";
 import type { Route } from "./+types/dashboard";
 import User1Image from "~/assets/Dan.jpg";
@@ -58,14 +58,14 @@ interface DealData {
   chatThreads: ChatThread[];
 }
 
-export async function loader({ request }: Route.LoaderArgs) {
-  const url = new URL(request.url);
-  const matchId = url.searchParams.get("matchId");
-  const dealId = url.searchParams.get("dealId");
+export default function DashboardRoute() {
+  const navigate = useNavigate();
+  const [searchParams] = useSearchParams();
 
-  // In a real app, you would fetch the actual deal data from your database
-  // For now, we'll use mock data based on the match or deal ID
-  const mockDeal: DealData = {
+  const matchId = searchParams.get("matchId");
+  const dealId = searchParams.get("dealId");
+
+  const deal: DealData = {
     id: dealId || matchId || "1",
     name: "Acquisition of tech Startup",
     businessDescription: "Inovative SaaS Platform",
@@ -188,14 +188,7 @@ export async function loader({ request }: Route.LoaderArgs) {
     ]
   };
 
-  return { deal: mockDeal };
-}
 
-export default function DashboardRoute({
-  loaderData,
-}: Route.ComponentProps) {
-  const { deal } = loaderData;
-  const navigate = useNavigate();
 
   const handleBack = () => {
     // Navigate back to previous page or home
